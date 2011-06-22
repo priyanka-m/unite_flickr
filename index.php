@@ -22,6 +22,7 @@ OC_APP::setActiveNavigationEntry( 'unite_flickr_index' );
 /* TODO: Check if the database is setup properly */
 // $database_setup = are_unite_tables_setup();
 $tables_setup = plugins_util::check_unite_tables_setup();
+echo $_SESSION['userid'];
 $flickr_username=$_POST['flickr_username'];
 if($tables_setup) {
   if($flickr_username) {
