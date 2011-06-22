@@ -11,7 +11,7 @@ $photos = $flickr->peopleGetPublicPhotos($uid);
 
 $index=0;
 $index_sync=0;
-echo '<form action="download_insert" method="POST">';
+echo '<form action="database_insert" method="POST">';
 
 if(empty($photos['photos'])) {
   echo '<b>Sorry, no photos found for this user</b>';
