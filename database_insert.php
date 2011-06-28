@@ -1,6 +1,4 @@
 <?php
-//$RUNTIME_NOAPPS=true; 
-//$RUNTIME_NOSETUPFS=true; 
 
 require_once('../../lib/base.php');
 require( '../../lib/template.php' );
