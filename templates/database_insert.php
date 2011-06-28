@@ -48,5 +48,4 @@ foreach($sync as $index_sync) {
 
 Plugins_Util::disconnect_OC_DB();
 
-
 ?>

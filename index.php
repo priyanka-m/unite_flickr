@@ -5,7 +5,6 @@ require( '../../lib/template.php' );
 
 require('../unite/lib/plugin_util.php');
 
-
 if( !OC_USER::isLoggedIn()){
 	header( 'Location: '.OC_HELPER::linkTo("",'index.php' ));
 	exit();

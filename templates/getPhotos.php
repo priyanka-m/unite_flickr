@@ -21,8 +21,7 @@ else {
   echo '<b>Public photos:</b><br/>';
   echo '<table>';
   echo '<tr><td><small>Download</small></td><td>&nbsp;</td><td><small>Synchronize</small></td></tr>';
-  foreach($photos['photos'] as $photo)
-  {
+  foreach($photos['photos'] as $photo) {
 	echo '<tr>';
     $url = $flickr->getPhotoURL($photo);
     echo '<td><input type="checkbox" NAME="download[]" VALUE="'.$index.'"/></td>';
