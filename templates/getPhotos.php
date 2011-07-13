@@ -36,7 +36,7 @@ else {
 	$index_sync++;
   }
   echo '</table>';
+  echo '<input type="submit" name="submit" value="Submit"/>';
+  echo '</form>';
 }
 ?>
-<input type="submit" name="submit" value="Submit"/>
-</form>
