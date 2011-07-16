@@ -10,8 +10,10 @@
      */
      //TODO Complete this function
      Plugins_Util::connect_OC_DB();
-     $result=Plugins_Util::query("SELECT * FROM unite WHERE ");
-	 $num_rows = mysql_num_rows($result);
-     Plugins_Util::disconnect_OC_DB();
+     $result=Plugins_Util::query("SELECT * FROM unite WHERE service_name ='flickr'");
+	 if(is_array($result) and isset($result[0])) {
+	   //Something needs to be acted upon.
+     }
+	 Plugins_Util::disconnect_OC_DB();
   }
 ?>
