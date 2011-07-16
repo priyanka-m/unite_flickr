@@ -1,4 +1,5 @@
 <?php
+  require('apps/unite/lib/plugin_util.php');
   
   function flickr_cron_download() {
     /* 
@@ -8,6 +9,9 @@
      *
      */
      //TODO Complete this function
-     echo 'Dummy';
+     Plugins_Util::connect_OC_DB();
+     $result=Plugins_Util::query("SELECT * FROM unite WHERE ");
+	 $num_rows = mysql_num_rows($result);
+     Plugins_Util::disconnect_OC_DB();
   }
 ?>
