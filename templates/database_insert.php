@@ -13,12 +13,10 @@ Plugins_Util::connect_OC_DB();
 
 foreach($download as $index){
     $query="SELECT * FROM unite WHERE service_name='flickr' AND resource='$url[$index]'";
-	$result=Plugins_Util::query($query);
-	$num_rows = mysql_num_rows($result);
-	echo $num_rows; 
-    if(is_array($result) and isset($result[0])) {
+	$result=Plugins_Util::query_and_fetchall($query);
+    if(!(is_array($result) and isset($result[0]))) {
          Plugins_Util::query("INSERT INTO unite(oc_username,service_name,service_user,resource)
-         VALUES('$owncloud_username','$service_name','$flickr_username','$url[$index]')")or die(mysql_error());  
+         VALUES('$owncloud_username','$service_name','$flickr_username','$url[$index]')");
          Plugins_Util::OC_DB_insertid();
     } 
 }
