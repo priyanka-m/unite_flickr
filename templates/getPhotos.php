@@ -4,6 +4,7 @@ require('api/phpFlickr.php');
 require('api/secrets.php');
 
 $flickr_username = $_['flickr_username'];
+
 $flickr = new phpFlickr($secret['api_key'],$secret['api_secret']);
 
 $uid=$flickr->people_findByUsername($flickr_username);
@@ -14,7 +15,6 @@ $index=0;
 $index_sync=0;
 
 echo '<form action="database_insert.php" method="POST">';
-
 if(empty($photos['photos'])) {
   echo '<b>Sorry, no photos found for this user</b>';
 }
@@ -31,7 +31,7 @@ else {
     echo '<input type="hidden" name="flickr_username" value="'.$flickr_username.'"/>';
     echo '<td>&nbsp;</td>';
     echo '<td><input type="checkbox" name="sync[]" value="'.$index_sync.'"/></td>';
-    echo '<td><img src="'.$small_url.'" height="75" width="75"/></td>';
+    echo '<td><kimg src="'.$small_url.'" height="75" width="75"/></td>';
     echo '<td><small>'.$url.'</small></td>';
     echo '</tr>';
     $index++;

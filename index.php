@@ -14,8 +14,9 @@ OC_UTIL::addStyle( 'unite_flickr', 'style' );
 OC_UTIL::addScript( 'unite_flickr', 'script' );
 OC_APP::setActiveNavigationEntry( 'unite_flickr_index' );
 
-$tables_setup = plugins_util::check_unite_tables_setup();
+$tables_setup = Plugins_Util::check_unite_tables_setup();
 $flickr_username=$_POST['flickr_username'];
+
 
 if($tables_setup) {
   if($flickr_username) {
@@ -31,7 +32,7 @@ if($tables_setup) {
 } 
 
 else {
-  $create_tables=plugins_util::construct_unite_tables();  
+  $create_tables=Plugins_Util::construct_unite_tables();  
   header( 'Location: '.OC_HELPER::linkTo( 'unite_flickr','index.php' ));
 }
 
