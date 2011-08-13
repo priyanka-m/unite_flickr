@@ -2,11 +2,11 @@
 
 
   function flickr_cron_download() {
-	  require('../unite/lib/plugin_util.php');
-      require_once('../../lib/base.php');
-	  require( '../../lib/template.php' );
-      require('api/phpFlickr.php');
-      require('api/secrets.php');
+	require('../unite/lib/plugin_util.php');
+	require_once('../../lib/base.php');
+	require( '../../lib/template.php' );
+	require('api/phpFlickr.php');
+	require('api/secrets.php');
   
     /* 
      * This function should contain the logic for reading the unite
@@ -27,13 +27,13 @@
      $result=Plugins_Util::query("SELECT sync FROM unite WHERE resource IS NULL");
      
      if(is_array($result)) {
-		 $flickr = new phpFlickr($secret['api_key'],$secret['api_secret']);
-         $result1=Plugins_Util::query_and_fetchall("SELECT DISTINCT service_user FROM unite");
-         $flickr_username=$result1[0]['service_user'];
-         $uid=$flickr->people_findByUsername($flickr_username);
-         $photosets=$flickr->photosets_getList($uid['nsid']);
+		$flickr = new phpFlickr($secret['api_key'],$secret['api_secret']);
+		$result1=Plugins_Util::query_and_fetchall("SELECT DISTINCT service_user FROM unite");
+		$flickr_username=$result1[0]['service_user'];
+		$uid=$flickr->people_findByUsername($flickr_username);
+		$photosets=$flickr->photosets_getList($uid['nsid']);
          
-         foreach($photosets['photoset'] as $photoset) {
+		foreach($photosets['photoset'] as $photoset) {
 			$photoset_id=$photoset['id'];
 			$dir_path="/unite/unite_flickr/".$photoset_id;
 		
@@ -66,7 +66,6 @@
    }
    
    else {
-	
 	$save_to="/unite/unite_flickr/";
     $result2=Plugins_Util::query_and_fetchall("SELECT * FROM unite WHERE service_name ='flickr' AND sync IS NULL");
     
