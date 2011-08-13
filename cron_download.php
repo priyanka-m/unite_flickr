@@ -19,7 +19,7 @@
 		if(!OC_Filesystem::is_dir('/unite')) {
 			OC_Filesystem::mkdir('/unite');
         }
-	    OC_Filesystem::mkdir('/unite/unite_flickr');
+		OC_Filesystem::mkdir('/unite/unite_flickr');
      }
       
      Plugins_Util::connect_OC_DB();
@@ -67,7 +67,7 @@
    
    else {
 	$save_to="/unite/unite_flickr/";
-    $result2=Plugins_Util::query_and_fetchall("SELECT * FROM unite WHERE service_name ='flickr' AND sync IS NULL");
+	$result2=Plugins_Util::query_and_fetchall("SELECT * FROM unite WHERE service_name ='flickr' AND sync IS NULL");
     
      //Now processing single images which have to be downloaded immediately
     
@@ -75,7 +75,7 @@
 		
 		foreach($result2 as $row) {
 			$resource = $row['resource'];
-		    $g=$save_to.basename($resource);
+			$g=$save_to.basename($resource);
 			$ch=curl_init($resource);
 			$fp=OC_Filesystem::fopen($g,'w');
 			
