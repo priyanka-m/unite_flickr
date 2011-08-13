@@ -24,9 +24,10 @@
       
      Plugins_Util::connect_OC_DB();
      
-     $result=Plugins_Util::query("SELECT sync FROM unite WHERE resource IS NULL");
+     $result=Plugins_Util::query_and_fetchall("SELECT sync FROM unite WHERE resource IS NULL");
      
-     if(is_array($result)) {
+     if($result) {
+		 echo "here";
 		$flickr = new phpFlickr($secret['api_key'],$secret['api_secret']);
 		$result1=Plugins_Util::query_and_fetchall("SELECT DISTINCT service_user FROM unite");
 		$flickr_username=$result1[0]['service_user'];
@@ -45,7 +46,7 @@
 			$save_to="/unite/unite_flickr/".$photoset_id."/";
 		
 			foreach($photos['photoset']['photo'] as $photo) {
-				$url = $flickr->buildPhotoURL($photo);
+				$url = $flickr->buildPhotoURL($photo,"large");
 				$file_name=basename($url);
 		
 				if(!OC_Filesystem::is_file($save_to.$file_name)) {
