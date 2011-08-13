@@ -18,6 +18,7 @@ $tmpl->assign('download',$_POST['download']);
 $tmpl->assign('url',$_POST['url']);
 $tmpl->assign('sync',$_POST['sync']);
 $tmpl->assign('flickr_username',$_POST['flickr_username']);
+$tmpl->assign('flickr_userid',$_POST['flickr_userid']);
 
 $tmpl->printPage();
 
