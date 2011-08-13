@@ -30,6 +30,7 @@ else {
 	echo '<b><font color="gray">Disabled</font></b>';
   echo '<br/><br/>';
   echo '<input type="submit" value="Toggle Synchronization"/>';
+  echo '<input type="hidden" name="flickr_username" value="'.$flickr_username.'"/>';
   echo '<br/><br/>';
   echo '</form>';
   

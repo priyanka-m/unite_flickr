@@ -13,6 +13,7 @@ OC_UTIL::addScript( 'unite_flickr', 'script' );
 OC_APP::setActiveNavigationEntry( 'unite_flickr_synchronize');
 
 $tmpl = new OC_Template( "unite_flickr", "synchronize", "user" );
+$tmpl->assign('flickr_username',$_POST['flickr_username']);
 $tmpl->printPage();
 
 ?>
