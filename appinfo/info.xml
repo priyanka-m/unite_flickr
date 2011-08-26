@@ -1,0 +1,10 @@
+<?xml version="1.0"?> 
+<info>
+	<id>unite_flickr</id>
+	<name>Unite Flickr Plugin</name>
+	<version>0.1</version>
+	<licence>AGPL</licence>
+	<author>Priyanka Menghani</author>
+	<require>1</require>
+	<description>FLickr Plugin for Unite.</description>
+</info>

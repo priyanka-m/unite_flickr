@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<database>
+
+ <name>*dbname*</name>
+ <create>true</create>
+ <overwrite>false</overwrite>
+
+ <charset>utf8</charset>
+
+ <table>
+
+  <name>*dbprefix*unite</name>
+
+  <declaration>
+
+   <field>
+    <name>*dbprefix*username</name>
+    <type>text</type>
+    <default></default>
+    <notnull>true</notnull>
+    <length>20</length>
+   </field>
+
+   <field>
+    <name>service_name</name>
+    <type>text</type>
+    <default></default>
+    <notnull>true</notnull>
+    <length>20</length>
+   </field>
+
+   <field>
+    <name>service_user</name>
+    <type>text</type>
+    <default></default>
+    <notnull>true</notnull>
+    <length>20</length>
+   </field>
+
+   <field>
+    <name>resource</name>
+    <type>text</type>
+    <default></default>
+    <notnull>true</notnull>
+    <length>100</length>
+   </field>
+
+   <field>
+    <name>sync</name>
+    <type>integer</type>
+    <notnull>false</notnull>
+    <length>1</length>
+   </field>
+
+   <field>
+    <name>fetch_at</name>
+    <type>time</type>
+    <default>00:00:00</default>
+    <notnull>true</notnull>
+   </field>
+
+   <field>
+    <name>cron_pattern</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>5</length>
+   </field>
+
+  </declaration>
+
+ </table>
+
+</database>
