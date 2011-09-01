@@ -47,7 +47,7 @@ else {
     echo '<input type="hidden" name="flickr_username" value="'.$flickr_username.'"/>';
     echo '<input type="hidden" name="flickr_userid" value="'.$uid.'"/>';
     echo '<td>&nbsp;</td>';
-    echo '<td><img src='.$small_url.' height="75" width="75"/></td>';
+    //echo '<td><img src='.$small_url.' height="75" width="75"/></td>';
     echo '<td><small>'.$url.'</small></td>';
     echo '</tr>';
     $index++;
